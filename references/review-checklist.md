@@ -6,9 +6,19 @@ Use this checklist before inserting generated figures into a thesis.
 
 - The figure supports the paragraph immediately before or after it.
 - The figure type matches the chapter: requirements use process/use-case/DFD; design uses architecture/module/ER; implementation uses flow/screenshots; testing uses test flow/results.
+- The paper has no major prose-only design section where a conventional本科论文 would normally require a diagram.
 - The image contains no internal caption, no "Figure", no watermark, no prompt residue, no Mermaid text, and no code.
 - Every node label is short, readable, and in Chinese unless the term is a standard English technical term.
 - All arrows have a clear direction and do not pass through boxes or text.
+
+## Missing Figure Audit
+
+- Requirements analysis has visual evidence for actors, business process, or data boundaries.
+- Overall design has visual evidence for architecture, modules, and major data flow.
+- Database design has ER evidence, not only table prose.
+- Implementation has screenshots or process flowcharts for core user operations.
+- Testing has test tables plus at least one process/scenario/result visual when the thesis length and system scope justify it.
+- Added figures are not filler: each one answers a likely reviewer complaint.
 
 ## Data Flow Diagram
 

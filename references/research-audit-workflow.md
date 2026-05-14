@@ -1,6 +1,6 @@
 # Research and Audit Workflow
 
-Use this workflow when upgrading thesis figures from mock, Mermaid, TikZ, code-generated, or visually poor diagrams into image-model-generated academic figures.
+Use this workflow when upgrading thesis figures from mock, Mermaid, TikZ, code-generated, or visually poor diagrams into image-model-generated academic figures, and when adding missing diagrams that a本科论文 should have but currently hides behind prose.
 
 ## 1. Build Thesis Context First
 
@@ -12,7 +12,7 @@ Read the thesis before designing figures:
 - note school-specific requirements for captions, fonts, page width, and figure placement;
 - identify whether "需求分析" and "总体设计" are separated, because figure placement depends on this boundary.
 
-Expected outcome: a chapter-to-figure map, not image prompts yet.
+Expected outcome: a chapter-to-figure map and a missing-figure map, not image prompts yet.
 
 ## 2. Understand the Real System
 
@@ -42,9 +42,9 @@ Before drawing, decide what each chapter is proving:
 
 Every figure should support one of these proof goals.
 
-## 4. Audit Existing Figures
+## 4. Audit Existing Figures and Missing Figures
 
-Create a replacement table:
+Create a replacement table for bad existing figures:
 
 | Figure | Source type | Current problem | Decision |
 | --- | --- | --- | --- |
@@ -59,6 +59,18 @@ Common replacement decisions:
 - Move oversized grammar/code diagrams to appendix.
 - Delete meaningless scenario diagrams that do not add design or test evidence.
 
+Then create a missing-figure table for prose-only sections:
+
+| Section | Current prose claim | Expected本科图 | Risk if absent | Decision |
+| --- | --- | --- | --- | --- |
+| 需求分析 | describes users and operations | 用例图 / 业务流程图 / 顶层DFD | reviewer says requirements are empty prose | add figure |
+| 总体设计 | describes modules and architecture | 系统架构图 / 功能模块图 / 数据流图 | reviewer says design is not visualized | add figure |
+| 数据库设计 | lists tables only | 总体ER图 / 局部ER图 | reviewer says database design is too simple | add figure |
+| 系统实现 | describes operation process | 关键流程图 / 系统截图 | reviewer says no implementation evidence | add figure |
+| 系统测试 | lists test cases only | 测试流程图 / 场景流程图 | reviewer says testing lacks process proof | add figure |
+
+Missing figures are not optional decoration. In conservative undergraduate theses, they often function as proof that the author performed requirements analysis, system design, database design, implementation, and testing.
+
 ## 5. Choose Replacement Figure Types
 
 Use this default mapping:
@@ -72,6 +84,17 @@ Use this default mapping:
 | database design too thin | full ER + 2-4 sub-ER figures |
 | implementation looks abstract | UI screenshots + operation flowcharts |
 | testing lacks evidence | test scenario flow + test case table |
+| long prose but no figure | add the expected textbook figure for that chapter |
+
+Use this minimum coverage heuristic for system-design theses:
+
+| Chapter | Minimum visual evidence |
+| --- | --- |
+| 需求分析 | 用例图 or 业务流程图, and DFD when data movement is central |
+| 总体设计 | 架构图, 功能模块图, 数据流图 |
+| 数据库/详细设计 | 总体ER图 plus局部ER图 when entities exceed 5-6 |
+| 系统实现 | screenshots plus key operation flowcharts |
+| 系统测试 | test case table plus test process/scenario figure |
 
 ## 6. Generate With Evidence-Based Prompts
 

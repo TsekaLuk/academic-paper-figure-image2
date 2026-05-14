@@ -1,6 +1,6 @@
 ---
 name: academic-paper-figure-image2
-description: Research, audit, redesign, generate, review, and place high-resolution traditional academic figures for Chinese adult-education undergraduate computer-science theses using image-generation models. Use when a thesis needs conventional textbook-style data-flow diagrams, ER diagrams, flowcharts, module diagrams, architecture diagrams, deployment diagrams, or when existing mock, Mermaid, TikZ, code-generated, modern, oversized, cluttered, or crude figures need to be upgraded for conservative thesis reviewers.
+description: Research, audit, redesign, generate, review, and place high-resolution traditional academic figures for Chinese adult-education undergraduate computer-science theses using image-generation models. Use when a thesis needs conventional textbook-style data-flow diagrams, ER diagrams, flowcharts, module diagrams, architecture diagrams, deployment diagrams, or when existing mock, missing, Mermaid, TikZ, code-generated, modern, oversized, cluttered, or crude figures need to be added or upgraded for conservative thesis reviewers.
 ---
 
 # Academic Paper Figure Image2
@@ -19,12 +19,13 @@ Never start from image generation. Start from understanding the thesis, the impl
 2. Inspect the implemented system and code to extract real modules, entities, data flows, services, pages, storage, and user operations.
 3. Convert the implementation into a thesis-friendly explanation model: requirements, overall design, detailed design, implementation, testing.
 4. Audit existing figures and mark mock diagrams, Mermaid/TikZ figures, code-generated charts, modern architecture posters, oversized diagrams, and misplaced figures for replacement.
-5. Choose the traditional diagram type expected in the target chapter.
-6. Reduce the figure to stable textbook symbols and short Chinese labels.
-7. Write a COSTAR image prompt with strict composition constraints.
-8. Generate one figure at a time, preferably landscape if it contains many nodes.
-9. Inspect for academic legibility: no cropped nodes, no crossing arrows, no decorative styling, no caption in the image.
-10. Insert the image near the paragraph that first introduces it, then add a normal thesis caption outside the image.
+5. Audit missing figures: identify chapters where a本科论文 normally needs a diagram but the text only uses plain narration.
+6. Choose the traditional diagram type expected in the target chapter.
+7. Reduce the figure to stable textbook symbols and short Chinese labels.
+8. Write a COSTAR image prompt with strict composition constraints.
+9. Generate one figure at a time, preferably landscape if it contains many nodes.
+10. Inspect for academic legibility: no cropped nodes, no crossing arrows, no decorative styling, no caption in the image.
+11. Insert the image near the paragraph that first introduces it, then add a normal thesis caption outside the image.
 
 For the full audit-and-upgrade workflow, load [references/research-audit-workflow.md](references/research-audit-workflow.md).
 
@@ -37,6 +38,7 @@ Before writing prompts, gather enough evidence to avoid making decorative but in
 - System implementation: source-code directory tree, routes/pages, service modules, database schema, API contracts, storage objects, export/import flows, and test/demo paths.
 - Paper narrative: how the author explains the system in old-school software-engineering language.
 - Existing diagram inventory: figure filename, caption, source type, chapter location, and replacement decision.
+- Missing-figure inventory: sections with long prose descriptions but no diagram, especially requirements, overall design, database design, implementation process, and testing.
 
 Treat the source code as evidence, but translate it into thesis language. For example, a Next.js route becomes a "前端页面模块"; an API handler becomes a "业务处理模块"; object storage becomes a "文件存储"; an export endpoint becomes a "文档导出处理".
 
@@ -53,6 +55,29 @@ Replace or redesign figures when any of these are true:
 - The flowchart exceeds the page, has crossing arrows, or lacks start/end and decision branch labels.
 
 Do not "patch" bad diagrams by shrinking them. Rebuild the content model, split the figure if needed, then regenerate.
+
+## Missing Figure Audit
+
+Add new figures when a conservative本科论文 reviewer would expect visual proof but the thesis only uses prose. This is as important as replacing bad figures.
+
+Look for these signals:
+
+- Requirements analysis explains users, roles, or业务流程 for more than a few paragraphs but has no use-case diagram, business flowchart, or context DFD.
+- Overall design describes modules, architecture, data movement, or storage but has no module diagram, architecture diagram, or DFD.
+- Database design lists tables or entities but has no complete ER diagram and no entity subgraphs.
+- Implementation chapter describes import, editing, collaboration, export, review, login, or administration flows but has no flowchart or system screenshot.
+- Testing chapter lists test cases but has no test process, scenario flow, or result screenshot.
+- A section repeatedly says "系统实现了..." without a diagram proving how the system works.
+
+When adding missing figures, do not add decorative filler. Each added figure must resolve a review risk: unclear requirements, weak design evidence, thin database design, unconvincing implementation, or insufficient testing proof.
+
+Default minimum figure set for a system-design undergraduate thesis:
+
+- Requirements: use-case diagram or业务流程图, plus context/level-0 DFD if data movement matters.
+- Overall design: system architecture diagram, functional module diagram, and main data-flow diagram.
+- Database/detailed design: overall ER diagram plus sub-ER diagrams for crowded core entities.
+- Implementation: key business process flowcharts and several real system screenshots.
+- Testing: test flow or test scenario diagram plus test case/result tables.
 
 ## Chapter Placement Rules
 
@@ -77,6 +102,15 @@ When upgrading an existing thesis, first create a figure map:
 | mock architecture | requirements | wrong abstraction | context DFD | requirements |
 | Mermaid ER | design | too simple | full ER + sub-ER | database design |
 | TikZ data flow | design | cluttered/crossing arrows | traditional DFD | overall design |
+
+Also create a missing-figure map:
+
+| Section | Prose-only claim | Risk | Added figure |
+| --- | --- | --- | --- |
+| requirements | describes actors and operations | requirements look unsupported | use-case diagram |
+| overall design | describes modules in text | design looks thin | module hierarchy |
+| database design | lists tables only | database design looks incomplete | ER subgraph |
+| implementation | describes export process | implementation lacks proof | export flowchart |
 
 ## Traditional Style Requirements
 
