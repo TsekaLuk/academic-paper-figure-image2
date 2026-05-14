@@ -55,6 +55,12 @@ PDF/Word page inspection
 - [docs/growth-playbook.md](./docs/growth-playbook.md): hacker-growth packaging logic.
 - [assets/image2-prompts.md](./assets/image2-prompts.md): visual asset prompts for repo branding.
 
+## Image Generation Note
+
+When working inside a Codex session that exposes a built-in image generation tool, use that tool directly for one-off repo art and thesis figure assets. Do not incorrectly assume the local `imagegen` CLI is the only path.
+
+Use the local CLI only when you specifically need reproducible batch generation, scripted runs, or local API-parameter control. In that case, the CLI may require `OPENAI_API_KEY`.
+
 ## Growth Positioning
 
 This repo packages a repeated thesis rescue pattern:

@@ -1,6 +1,14 @@
 # Image2 Prompts
 
-Use these prompts to replace the SVG fallback with high-fidelity image2 assets when image generation is available.
+Use these prompts to replace the SVG fallback with high-fidelity image2 assets.
+
+## Execution Priority
+
+1. In a Codex session with a built-in image generation tool, call that tool directly. It does not require the local `OPENAI_API_KEY`.
+2. Use the local `imagegen` CLI only for reproducible batch generation, scripted runs, or explicit API-parameter control.
+3. If using the local CLI, expect it to require `OPENAI_API_KEY` and local dependencies.
+
+Do not block repo art generation just because the local CLI environment is missing a key. That was a failure mode observed during this repo setup.
 
 ## Social Card
 
