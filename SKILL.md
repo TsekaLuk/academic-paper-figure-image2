@@ -1,33 +1,33 @@
 ---
 name: academic-paper-figure-image2
-description: Research, audit, redesign, generate, review, and place high-resolution traditional academic figures for Chinese adult-education undergraduate computer-science theses using image-generation models. Use when a thesis needs conventional textbook-style data-flow diagrams, ER diagrams, flowcharts, module diagrams, architecture diagrams, deployment diagrams, or when existing mock, missing, Mermaid, TikZ, code-generated, modern, oversized, cluttered, or crude figures need to be added or upgraded for conservative thesis reviewers.
+description: Research, audit, redesign, generate, review, and place high-resolution traditional academic figures for Chinese undergraduate and adult-education theses using image-generation models. Use when a thesis needs field-appropriate conservative figures or tables, including software-engineering DFD/ER/flow/module diagrams, math-modeling model-flow/sensitivity/error diagrams, data-analysis cleaning/statistical/model-evaluation charts, market-research questionnaire/sample/crosstab visuals, management fishbone/SWOT/PEST/process diagrams, education-research survey/interview/statistical visuals, or finance/accounting indicator/trend/comparison charts. Also use when existing mock, missing, Mermaid, TikZ, code-generated, modern, oversized, cluttered, or crude figures need to be audited, replaced, or added for conservative thesis reviewers.
 ---
 
 # Academic Paper Figure Image2
 
 ## Core Rule
 
-Optimize for thesis approval, not visual novelty. Produce conservative, black-and-white, textbook-style computer-science diagrams that look like they belong in an adult-education undergraduate thesis.
+Optimize for thesis approval, not visual novelty. Produce conservative, black-and-white, textbook-style figures that match the target field's undergraduate thesis conventions.
 
 Do not generate trendy architecture posters, colorful product diagrams, UI mockups, or Mermaid/TikZ-looking output. Do not put the figure caption inside the image. The paper or document system should own captions and numbering.
 
-Never start from image generation. Start from understanding the thesis, the implemented system, the source code, and the reviewer-facing argument. A correct boring diagram beats a beautiful false diagram.
+Never start from image generation. Start from understanding the thesis type, accepted sample theses, source data/materials, implementation or research method, and the reviewer-facing argument. A correct boring figure beats a beautiful false figure.
 
 ## Workflow
 
-1. Research the thesis topic, chapter structure, accepted reference theses, and school format rules.
-2. Inspect the implemented system and code to extract real modules, entities, data flows, services, pages, storage, and user operations.
-3. Convert the implementation into a thesis-friendly explanation model: requirements, overall design, detailed design, implementation, testing.
+1. Research the thesis topic, domain type, chapter structure, accepted reference theses, and school format rules.
+2. Inspect the real evidence: source code, data tables, questionnaires, interview outlines, model formulas, case materials, financial statements, experiment records, screenshots, or test artifacts.
+3. Convert the evidence into a field-friendly explanation model: requirements/design for software, assumptions/model/solution for modeling, data/source/method/result for analysis, questionnaire/sample/statistics for survey work, framework/problem/countermeasure for management cases.
 4. Audit existing figures and mark mock diagrams, Mermaid/TikZ figures, code-generated charts, modern architecture posters, oversized diagrams, and misplaced figures for replacement.
 5. Audit missing figures: identify chapters where a本科论文 normally needs a diagram but the text only uses plain narration.
-6. Choose the traditional diagram type expected in the target chapter.
+6. Choose the traditional figure or table type expected in the target chapter and field.
 7. Reduce the figure to stable textbook symbols and short Chinese labels.
 8. Write a COSTAR image prompt with strict composition constraints.
 9. Generate one figure at a time, preferably landscape if it contains many nodes.
 10. Inspect for academic legibility: no cropped nodes, no crossing arrows, no decorative styling, no caption in the image.
 11. Insert the image near the paragraph that first introduces it, then add a normal thesis caption outside the image.
 
-For the full audit-and-upgrade workflow, load [references/research-audit-workflow.md](references/research-audit-workflow.md).
+For the full audit-and-upgrade workflow, load [references/research-audit-workflow.md](references/research-audit-workflow.md). For non-software fields, load [references/cross-domain-figure-playbook.md](references/cross-domain-figure-playbook.md).
 
 ## Pre-Generation Research
 
@@ -36,11 +36,12 @@ Before writing prompts, gather enough evidence to avoid making decorative but in
 - Thesis structure: chapter titles, section goals, figure numbering, and chapter-summary style.
 - Accepted examples: what diagrams appear in the same chapter of approved theses, especially adult-education or second-degree theses.
 - System implementation: source-code directory tree, routes/pages, service modules, database schema, API contracts, storage objects, export/import flows, and test/demo paths.
-- Paper narrative: how the author explains the system in old-school software-engineering language.
+- Paper narrative: how the author explains the work in the field's conservative undergraduate language.
 - Existing diagram inventory: figure filename, caption, source type, chapter location, and replacement decision.
 - Missing-figure inventory: sections with long prose descriptions but no diagram, especially requirements, overall design, database design, implementation process, and testing.
+- Domain-material inventory: sections where the field normally expects a table, chart, model diagram, variable list, sample profile, reliability/validity table, indicator system, or countermeasure matrix.
 
-Treat the source code as evidence, but translate it into thesis language. For example, a Next.js route becomes a "前端页面模块"; an API handler becomes a "业务处理模块"; object storage becomes a "文件存储"; an export endpoint becomes a "文档导出处理".
+Treat source code, data, questionnaires, models, and case materials as evidence, then translate them into thesis language. For example, a Next.js route becomes a "前端页面模块"; a survey sheet becomes a "样本统计表"; a formula group becomes a "模型建立过程"; a financial statement becomes a "指标分析数据来源".
 
 ## Figure Audit and Replacement Rules
 
@@ -71,7 +72,7 @@ Look for these signals:
 
 When adding missing figures, do not add decorative filler. Each added figure must resolve a review risk: unclear requirements, weak design evidence, thin database design, unconvincing implementation, or insufficient testing proof.
 
-Default minimum figure set for a system-design undergraduate thesis:
+Default minimum figure set for a software system-design undergraduate thesis:
 
 - Requirements: use-case diagram or业务流程图, plus context/level-0 DFD if data movement matters.
 - Overall design: system architecture diagram, functional module diagram, and main data-flow diagram.
@@ -81,7 +82,7 @@ Default minimum figure set for a system-design undergraduate thesis:
 
 ## Chapter Placement Rules
 
-Use figures where an older computer-science thesis reviewer expects them.
+Use figures where an older field reviewer expects them. The exact expected object changes by discipline; do not force software diagrams into non-software papers.
 
 | Chapter area | Preferred figures | Avoid |
 | --- | --- | --- |
@@ -94,6 +95,8 @@ Use figures where an older computer-science thesis reviewer expects them.
 | Appendix | Large grammar, code, extra tables, oversized diagrams | Main proof figures that the正文 depends on |
 
 Each chapter should have a numbered chapter summary if the thesis style uses chapter summaries. Keep figures near their corresponding section instead of collecting them randomly.
+
+For cross-domain placement rules, load [references/cross-domain-figure-playbook.md](references/cross-domain-figure-playbook.md).
 
 When upgrading an existing thesis, first create a figure map:
 
@@ -168,15 +171,15 @@ Avoid cloud-product marketing icons unless the paper is explicitly about cloud a
 Use this pattern for each image-model request:
 
 ```text
-Context: This figure is for a Chinese adult-education undergraduate computer-science thesis. It is based on the actual implemented system and source-code analysis. It must look like a traditional textbook diagram, not a modern product diagram.
+Context: This figure is for a Chinese undergraduate thesis in [field]. It is based on the actual thesis evidence: [source code/data/formulas/questionnaire/case material/financial statements/screenshots]. It must look like a traditional textbook-style academic figure, not a modern poster or product diagram.
 
 Objective: Generate a high-resolution black-and-white [diagram type] for [chapter/section purpose].
 
 Style: Conservative academic style, white background, thin black lines, simple geometric symbols, Songti-like Chinese labels, no color, no gradient, no shadow, no decorative icons, no caption inside the image.
 
-Task: Draw the following nodes and relationships derived from the system analysis: [list nodes, relationships, arrows, cardinalities, branch labels].
+Task: Draw the following materials derived from the thesis analysis: [nodes, relationships, variables, indicators, data flows, factors, arrows, cardinalities, branch labels, or table dimensions].
 
-Audience: Conservative undergraduate thesis reviewers who expect standard software-engineering diagrams.
+Audience: Conservative undergraduate thesis reviewers who expect standard field-appropriate academic figures.
 
 Response: Output only the diagram image. Ensure all Chinese text is readable, no node is cropped, arrows do not cross boxes, layout fits A4 thesis insertion.
 ```

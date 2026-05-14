@@ -15,15 +15,15 @@ Do not block repo art generation just because the local CLI environment is missi
 ```text
 Use case: infographic-diagram
 Asset type: GitHub repository social preview image, 1200x630
-Primary request: a restrained academic research visual for a skill named "Academic Paper Figure Image2"
-Scene/background: clean ivory paper background with subtle printed-paper texture, thin black border, scholarly software-engineering diagram motifs
-Subject: traditional black-and-white thesis diagrams: data-flow diagram, ER diagram, flowchart diamond, module boxes, small audit checklist marks
-Style/medium: high-end editorial academic illustration, conservative Chinese undergraduate thesis aesthetic, precise vector-like linework
+Primary request: a restrained cross-domain academic research visual for a skill named "Academic Paper Figure Image2"
+Scene/background: clean ivory paper background with subtle printed-paper texture, thin black border, undergraduate thesis figure motifs across multiple fields
+Subject: traditional black-and-white thesis visuals: software ER/DFD, mathematical-modeling flowchart, data-cleaning process, questionnaire sample table, SWOT/fishbone diagnosis, finance indicator chart, small audit checklist marks
+Style/medium: high-end editorial academic illustration, conservative Chinese undergraduate thesis aesthetic, precise vector-like linework, field-appropriate textbook symbols
 Composition/framing: wide landscape card, title area on top-left, diagram pipeline across the center, enough negative space, no clutter
 Lighting/mood: calm, rigorous, archival, research-grade
 Color palette: ivory, black, warm gray, very subtle muted blue accents only if needed
 Text: "Academic Paper Figure Image2" and "Research-first figure audit"
-Constraints: no cartoon mascot, no neon, no SaaS dashboard style, no fake UI, no watermark, no internal figure caption, all text must be readable
+Constraints: no cartoon mascot, no neon, no SaaS dashboard style, no fake UI, no watermark, no internal figure caption, no real school name, no real student name, no real thesis title, no real student ID, all text must be readable
 ```
 
 ## README Hero
@@ -31,8 +31,8 @@ Constraints: no cartoon mascot, no neon, no SaaS dashboard style, no fake UI, no
 ```text
 Use case: infographic-diagram
 Asset type: README hero image, 1536x768
-Primary request: a conservative academic workflow illustration showing thesis/code research, figure audit, image2 prompting, and final textbook-style figures
-Style/medium: black-and-white scholarly diagram, clean line art, traditional software-engineering textbook symbols
+Primary request: a conservative academic workflow illustration showing thesis evidence research, cross-domain figure audit, image2 prompting, and final textbook-style figures
+Style/medium: black-and-white scholarly diagram, clean line art, traditional undergraduate textbook symbols for software, modeling, data analysis, survey research, management, and finance
 Composition/framing: left-to-right workflow, spacious, suitable for GitHub README
-Constraints: no colorful modern architecture icons, no Mermaid/TikZ look, no captions inside diagram, no watermark
+Constraints: no colorful modern architecture icons, no Mermaid/TikZ look, no captions inside diagram, no watermark, no real school name, no real student name, no real thesis title, no real student ID
 ```

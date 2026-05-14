@@ -1,22 +1,25 @@
 # Research and Audit Workflow
 
-Use this workflow when upgrading thesis figures from mock, Mermaid, TikZ, code-generated, or visually poor diagrams into image-model-generated academic figures, and when adding missing diagrams that a本科论文 should have but currently hides behind prose.
+Use this workflow when upgrading thesis figures from mock, Mermaid, TikZ, code-generated, or visually poor diagrams into image-model-generated academic figures, and when adding missing diagrams/tables that a本科论文 should have but currently hides behind prose.
 
 ## 1. Build Thesis Context First
 
 Read the thesis before designing figures:
 
 - record chapter titles and section purposes;
+- classify the thesis type: software system, mathematical modeling, data analysis, market research, management case, education research, finance/accounting, or hybrid;
 - identify where figures are currently referenced;
 - inspect accepted sample theses from the same school or teacher;
 - note school-specific requirements for captions, fonts, page width, and figure placement;
 - identify whether "需求分析" and "总体设计" are separated, because figure placement depends on this boundary.
 
-Expected outcome: a chapter-to-figure map and a missing-figure map, not image prompts yet.
+Expected outcome: a chapter-to-figure map, a missing-figure map, and a domain-material checklist, not image prompts yet.
 
-## 2. Understand the Real System
+## 2. Understand the Real Evidence
 
-Inspect source code and artifacts. Extract thesis-level concepts:
+For software theses, inspect source code and artifacts. For non-software theses, inspect data, formulas, questionnaires, interview outlines, case evidence, financial statements, statistical outputs, and result tables.
+
+Extract thesis-level concepts:
 
 | Code artifact | Thesis concept |
 | --- | --- |
@@ -27,12 +30,17 @@ Inspect source code and artifacts. Extract thesis-level concepts:
 | export or render endpoint | 文档生成 / 导出模块 |
 | auth/session/role logic | 用户权限模块 |
 | test/demo script | 测试流程 / 应用场景 |
+| formula group | 模型建立 / 求解过程 |
+| survey sheet | 样本统计 / 问卷维度 |
+| data spreadsheet | 数据来源 / 变量说明 / 预处理 |
+| financial statement | 指标体系 / 趋势分析 |
+| case material | 问题诊断 / 原因分析 / 对策设计 |
 
-Do not paste code into the figure or paper正文. Convert code into old-school software-engineering terms.
+Do not paste raw code, raw spreadsheet dumps, or raw statistical output into the figure or paper正文. Convert evidence into field-appropriate academic figures or tables.
 
 ## 3. Build the Paper Logic
 
-Before drawing, decide what each chapter is proving:
+Before drawing, decide what each chapter is proving. For software theses:
 
 - Requirements analysis proves the system is needed and the functional boundary is clear.
 - Overall design proves the system has modules, architecture, data flow, and storage design.
@@ -41,6 +49,14 @@ Before drawing, decide what each chapter is proving:
 - Testing proves the system can complete the expected scenarios.
 
 Every figure should support one of these proof goals.
+
+For other fields, use the same logic but change the proof target:
+
+- Mathematical modeling proves assumptions, variables, model construction, solving process, and validation.
+- Data analysis proves data source, preprocessing, statistical pattern, model result, and interpretation.
+- Market research proves questionnaire design, sample credibility, analysis results, and recommendation basis.
+- Management case proves problem identification, cause analysis, countermeasure design, and implementation feasibility.
+- Finance/accounting proves data source, indicator system, trend/comparison, risk diagnosis, and suggestions.
 
 ## 4. Audit Existing Figures and Missing Figures
 
@@ -73,7 +89,7 @@ Missing figures are not optional decoration. In conservative undergraduate these
 
 ## 5. Choose Replacement Figure Types
 
-Use this default mapping:
+Use this default software mapping:
 
 | Problem | Replacement |
 | --- | --- |
@@ -95,6 +111,8 @@ Use this minimum coverage heuristic for system-design theses:
 | 数据库/详细设计 | 总体ER图 plus局部ER图 when entities exceed 5-6 |
 | 系统实现 | screenshots plus key operation flowcharts |
 | 系统测试 | test case table plus test process/scenario figure |
+
+For non-software theses, load [cross-domain-figure-playbook.md](cross-domain-figure-playbook.md) and build an equivalent field-specific minimum coverage table before prompting image generation.
 
 ## 6. Generate With Evidence-Based Prompts
 

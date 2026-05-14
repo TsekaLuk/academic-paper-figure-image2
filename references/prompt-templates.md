@@ -2,6 +2,8 @@
 
 Use these templates with an image-generation model. Replace bracketed fields before use.
 
+For non-software domains, use the generic cross-domain template in [cross-domain-figure-playbook.md](cross-domain-figure-playbook.md) first, then specialize it with the templates below.
+
 ## Context DFD
 
 ```text
@@ -138,4 +140,84 @@ Draw arrows only for main dependencies. Avoid crossing arrows and avoid diagonal
 Audience: Conservative undergraduate thesis reviewers.
 
 Response: Output only the diagram image with readable Chinese labels.
+```
+
+## Mathematical Modeling Flow
+
+```text
+Context: This figure is for a Chinese undergraduate mathematical-modeling thesis. It must look like a conservative textbook-style model-building flowchart.
+
+Objective: Generate a high-resolution black-and-white model construction and solution flowchart for [problem name].
+
+Style: White background, thin black lines, terminal ovals for start/end, rectangles for process steps, diamonds for key judgments, Songti-like Chinese labels, no color, no gradient, no shadow, no caption inside the image.
+
+Task: Draw the flow from top to bottom: 问题分析 -> 基本假设 -> 符号定义 -> 模型建立 -> 参数估计 -> 模型求解 -> 结果检验 -> 灵敏度分析 -> 结论输出. Replace or extend these nodes with the thesis-specific steps: [specific steps]. Keep each node label short.
+
+Audience: Conservative undergraduate reviewers who expect standard mathematical-modeling visual materials.
+
+Response: Output only the diagram image. Ensure labels are readable and no node is cropped.
+```
+
+## Data Analysis Process
+
+```text
+Context: This figure is for a Chinese undergraduate data-analysis thesis. It must show the data processing and analysis process in a traditional academic style.
+
+Objective: Generate a high-resolution black-and-white data analysis flowchart for [topic].
+
+Style: White background, thin black process boxes and arrows, conservative academic layout, Songti-like Chinese labels, no dashboard style, no color, no caption inside the image.
+
+Task: Draw the process: 数据来源 -> 数据清洗 -> 缺失值处理 -> 描述性统计 -> 特征分析 -> 模型建立 -> 结果评价 -> 结论解释. Use these thesis-specific variables or data sources: [data/source/variables]. Avoid decorative icons.
+
+Audience: Undergraduate thesis reviewers checking whether data analysis is standardized.
+
+Response: Output only the diagram image, readable at A4 thesis width.
+```
+
+## Market Research Structure
+
+```text
+Context: This figure is for a Chinese undergraduate market-research thesis. It must look like a conservative questionnaire-analysis diagram or table-style figure.
+
+Objective: Generate a high-resolution black-and-white questionnaire structure and analysis framework figure for [research topic].
+
+Style: White background, thin black rectangular boxes, clear table-like or hierarchy layout, Songti-like Chinese labels, no colorful infographic style, no caption inside the image.
+
+Task: Show these survey dimensions: [dimension list]. Under each dimension, show representative indicators: [indicator list]. Add an analysis path from 问卷设计 -> 样本收集 -> 信度效度检验 -> 描述统计 -> 交叉分析 -> 问题诊断 -> 对策建议.
+
+Audience: Conservative undergraduate thesis reviewers who expect questionnaire design and analysis evidence.
+
+Response: Output only the figure image, no title or watermark.
+```
+
+## Management Diagnosis Diagram
+
+```text
+Context: This figure is for a Chinese undergraduate management or business-case thesis. It must use a conservative textbook-style problem diagnosis diagram.
+
+Objective: Generate a high-resolution black-and-white [fishbone/SWOT/PEST/process] diagram for [case/company/problem].
+
+Style: White background, thin black lines, simple geometric shapes, Songti-like Chinese labels, no color, no gradient, no decorative business icons, no caption inside the image.
+
+Task: Represent the central problem as [problem]. Use these cause or factor groups: [groups]. Include these case-specific factors: [factors]. Keep the layout balanced and readable.
+
+Audience: Conservative undergraduate reviewers expecting a standard management-analysis framework.
+
+Response: Output only the diagram image.
+```
+
+## Finance Indicator Analysis
+
+```text
+Context: This figure is for a Chinese undergraduate finance or accounting thesis. It must look like a conservative academic indicator-analysis chart or framework.
+
+Objective: Generate a high-resolution black-and-white [indicator-system/trend/comparison/DuPont] figure for [company/topic].
+
+Style: White background, thin black lines, restrained academic table/chart style, Songti-like Chinese labels, no dashboard style, no color, no decorative icons, no caption inside the image.
+
+Task: Use these indicators: [indicator list]. Use these periods or comparison objects: [periods/peers]. Show the analysis structure from 数据来源 -> 指标计算 -> 趋势分析 -> 同行比较 -> 问题诊断 -> 改进建议.
+
+Audience: Conservative undergraduate finance/accounting thesis reviewers.
+
+Response: Output only the figure image.
 ```
