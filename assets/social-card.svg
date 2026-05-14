@@ -1,0 +1,47 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F7F3EA"/>
+  <rect x="44" y="44" width="1112" height="542" rx="28" fill="#FFFDF8" stroke="#1F2933" stroke-width="3"/>
+  <path d="M96 130H1104" stroke="#1F2933" stroke-width="2"/>
+  <text x="96" y="104" fill="#1F2933" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700">Academic Paper Figure Image2</text>
+  <text x="900" y="104" fill="#58616B" font-family="Georgia, 'Times New Roman', serif" font-size="18">research-first figure skill</text>
+
+  <rect x="98" y="176" width="278" height="86" rx="8" fill="#F4F1EA" stroke="#1F2933" stroke-width="2"/>
+  <text x="237" y="228" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="24">论文与代码调研</text>
+
+  <circle cx="512" cy="219" r="54" fill="#FFFDF8" stroke="#1F2933" stroke-width="2.5"/>
+  <text x="512" y="212" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="22">图表</text>
+  <text x="512" y="240" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="22">审计</text>
+
+  <path d="M376 219H458" stroke="#1F2933" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M566 219H650" stroke="#1F2933" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="650" y="176" width="184" height="86" rx="8" fill="#FFFDF8" stroke="#1F2933" stroke-width="2"/>
+  <text x="742" y="228" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="23">image2提示词</text>
+
+  <path d="M834 219H920" stroke="#1F2933" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <rect x="920" y="176" width="184" height="86" rx="8" fill="#F4F1EA" stroke="#1F2933" stroke-width="2"/>
+  <text x="1012" y="213" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="22">八股规范</text>
+  <text x="1012" y="241" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="22">学术插图</text>
+
+  <rect x="126" y="352" width="188" height="64" fill="#FFFDF8" stroke="#1F2933" stroke-width="2"/>
+  <text x="220" y="392" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="21">数据流图</text>
+
+  <rect x="368" y="352" width="188" height="64" fill="#FFFDF8" stroke="#1F2933" stroke-width="2"/>
+  <text x="462" y="392" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="21">ER图</text>
+
+  <path d="M718 352H872L795 416L718 352Z" fill="#FFFDF8" stroke="#1F2933" stroke-width="2"/>
+  <text x="795" y="389" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="21">流程判断</text>
+
+  <rect x="936" y="352" width="136" height="64" rx="32" fill="#FFFDF8" stroke="#1F2933" stroke-width="2"/>
+  <text x="1004" y="392" text-anchor="middle" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="21">测试结果</text>
+
+  <text x="96" y="500" fill="#1F2933" font-family="'Songti SC', SimSun, serif" font-size="30" font-weight="700">把评审意见转化为可复用的图表验收标准</text>
+  <text x="96" y="540" fill="#58616B" font-family="'Songti SC', SimSun, serif" font-size="22">调研 · 审计 · 补图 · 重绘 · 章节放置 · PDF页面验收</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2L10 6L2 10" fill="none" stroke="#1F2933" stroke-width="2"/>
+    </marker>
+  </defs>
+</svg>
