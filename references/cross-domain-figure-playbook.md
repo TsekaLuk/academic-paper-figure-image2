@@ -143,9 +143,9 @@ Avoid:
 ```text
 Context: This figure is for a Chinese undergraduate thesis in [field]. The figure must match conservative field conventions and look like a textbook-style academic figure, not a modern poster or dashboard.
 
-Objective: Generate a high-resolution black-and-white [figure/table/chart type] for the [chapter/section] of the thesis.
+Objective: Generate a high-resolution [figure/table/chart type] for the [chapter/section] of the thesis.
 
-Style: White background, thin black lines, conservative academic layout, Songti-like Chinese labels, no gradient, no shadow, no decorative icons, no internal caption or figure number.
+Style: White background, conservative academic layout, Songti-like Chinese labels, no gradient, no shadow, no decorative icons, no internal caption or figure number. Use black-and-white for structural diagrams. For data charts, restrained print-safe academic color is acceptable when it improves comparison; include labels, markers, line styles, hatching, or a clear legend so the chart remains readable in grayscale.
 
 Task: Use these exact materials from the thesis: [variables/data/sample/framework/nodes/relationships]. Arrange them as [layout constraints]. Keep labels short and readable at A4 thesis width.
 

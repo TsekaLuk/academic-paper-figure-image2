@@ -174,6 +174,22 @@ Audience: Undergraduate thesis reviewers checking whether data analysis is stand
 Response: Output only the diagram image, readable at A4 thesis width.
 ```
 
+## Data Visualization Chart
+
+```text
+Context: This chart is for a Chinese undergraduate thesis in [field]. It is based on verified thesis evidence: [dataset/experiment output/questionnaire result/statistical table/financial statement/model result]. It must look like a conservative academic chart, not a dashboard or colorful infographic.
+
+Objective: Generate a high-resolution [bar chart/line chart/scatter plot/heatmap/distribution chart/model-comparison chart] for [chapter/section purpose].
+
+Style: White background, clean axes, readable Songti-like Chinese labels, Times-like numbers, restrained print-safe academic colors only if they improve comparison, no gradient, no shadow, no decorative icons, no 3D effect, no internal caption or figure number.
+
+Task: Plot these exact values or relationships: [series/categories/periods/metrics/units]. Use a clear legend or direct labels. Use line styles, markers, hatching, or annotations so the chart remains understandable in grayscale printing.
+
+Audience: Conservative undergraduate thesis reviewers who expect traceable data evidence and readable academic charts.
+
+Response: Output only the chart image. Do not invent values. Do not include a title, watermark, caption, or explanatory paragraph inside the image.
+```
+
 ## Market Research Structure
 
 ```text
@@ -211,9 +227,9 @@ Response: Output only the diagram image.
 ```text
 Context: This figure is for a Chinese undergraduate finance or accounting thesis. It must look like a conservative academic indicator-analysis chart or framework.
 
-Objective: Generate a high-resolution black-and-white [indicator-system/trend/comparison/DuPont] figure for [company/topic].
+Objective: Generate a high-resolution [indicator-system/trend/comparison/DuPont] figure for [company/topic].
 
-Style: White background, thin black lines, restrained academic table/chart style, Songti-like Chinese labels, no dashboard style, no color, no decorative icons, no caption inside the image.
+Style: White background, restrained academic table/chart style, Songti-like Chinese labels, no dashboard style, no decorative icons, no caption inside the image. For trend or comparison charts, restrained print-safe academic color is acceptable when it improves distinction; also use labels, markers, line styles, or hatching so the chart remains readable in grayscale.
 
 Task: Use these indicators: [indicator list]. Use these periods or comparison objects: [periods/peers]. Show the analysis structure from 数据来源 -> 指标计算 -> 趋势分析 -> 同行比较 -> 问题诊断 -> 改进建议.
 

@@ -16,7 +16,7 @@ It is designed for the situation where a thesis is not failing because the work 
 - **Domain fit:** figures match the thesis field instead of forcing every paper into software diagrams.
 - **Evidence:** figures are derived from thesis claims, source code, data, formulas, questionnaires, case materials, financial statements, screenshots, and test flows.
 - **Placement:** each figure belongs to the right chapter and appears near the paragraph it supports.
-- **Visual restraint:** black-and-white, textbook-like, no modern SaaS dashboard aesthetics.
+- **Visual restraint:** textbook-like and print-safe; structural diagrams default to black-and-white, while data visualizations may use restrained academic color when it improves comparison.
 - **Replacement discipline:** mock, Mermaid, TikZ, code-generated, cramped, or decorative figures are audited and upgraded.
 
 ## Core Workflow
@@ -88,6 +88,6 @@ cp -R academic-paper-figure-image2 ~/.agents/skills/
 
 ## Quality Bar
 
-A generated figure is acceptable only when it is accurate, conventional, readable at A4 thesis width, caption-free inside the image, and placed in the right chapter.
+A generated figure is acceptable only when it is accurate, conventional, readable at A4 thesis width, caption-free inside the image, and placed in the right chapter. For data visualizations, color is acceptable when it is restrained, print-safe, and backed by traceable thesis data.
 
 If the diagram looks impressive but a conservative undergraduate thesis reviewer would call it "乱", it fails.

@@ -7,7 +7,7 @@ description: Research, audit, redesign, generate, review, and place high-resolut
 
 ## Core Rule
 
-Optimize for thesis approval, not visual novelty. Produce conservative, black-and-white, textbook-style figures that match the target field's undergraduate thesis conventions.
+Optimize for thesis approval, not visual novelty. Produce conservative, textbook-style figures that match the target field's undergraduate thesis conventions. Use black-and-white by default for structural diagrams such as DFD, ER, module, architecture, flowchart, and sequence diagrams. For data visualizations such as bar charts, line charts, scatter plots, correlation charts, distribution charts, sensitivity/error charts, survey charts, and finance indicator charts, restrained academic color is allowed when it improves comparison and readability.
 
 Do not generate trendy architecture posters, colorful product diagrams, UI mockups, or Mermaid/TikZ-looking output. Do not put the figure caption inside the image. The paper or document system should own captions and numbering.
 
@@ -48,7 +48,7 @@ Treat source code, data, questionnaires, models, and case materials as evidence,
 Replace or redesign figures when any of these are true:
 
 - The figure is a mock placeholder that does not reflect the actual system.
-- The figure is generated directly from Mermaid/TikZ/code and looks cramped, mechanical, colorful, or visually inconsistent with a thesis.
+- The figure is generated directly from Mermaid/TikZ/code and looks cramped, mechanical, inappropriately colorful for its figure type, or visually inconsistent with a thesis.
 - The figure contains hover boxes, UI artifacts, code labels, markdown, internal captions, or accidental tool output.
 - The diagram type is placed in the wrong chapter, such as ER diagrams in requirements analysis or deployment diagrams before overall design.
 - The ER diagram is too shallow and only lists a few entities without attributes or cardinalities.
@@ -120,6 +120,11 @@ Also create a missing-figure map:
 Use these visual constraints unless the user gives a stricter school template:
 
 - White background, black or dark-gray lines, no gradients, no shadows, no icons unless required by the diagram convention.
+- Use the figure type to choose color:
+  - Structural diagrams should stay black-and-white or grayscale unless the school/sample thesis clearly uses a restrained accent.
+  - Data visualizations may use a limited, print-safe academic palette when color clarifies series, groups, categories, or thresholds.
+  - Prefer 2-5 muted, high-contrast colors; also use labels, line styles, markers, or hatching so the chart remains understandable when printed in grayscale.
+  - Avoid rainbow palettes, neon colors, gradients, translucent dashboard fills, decorative backgrounds, and color-only encodings without labels or legend.
 - Songti/SimSun-like Chinese labels if possible; English labels in Times-like serif if needed.
 - Thin, consistent strokes; right-angle or straight arrows; no hover boxes, floating decorations, or canvas artifacts.
 - Nodes arranged on a clear grid with generous spacing.
@@ -166,6 +171,18 @@ Use layered boxes for client, application service, storage, and external service
 
 Avoid cloud-product marketing icons unless the paper is explicitly about cloud architecture and the reviewer accepts them.
 
+### Data Visualization
+
+Use chart types that match the evidence: bar charts for metric comparison, line charts for time trends, scatter plots for correlation, box/distribution charts for dispersion, heatmaps for matrices, and grouped bars or small multiples for survey or strategy comparisons.
+
+Data visualizations do not have to be grayscale. Use restrained academic color when it makes grouped data easier to compare, but keep the chart thesis-like:
+
+- derive every value from the thesis data, experiment output, questionnaire, model result, or financial statement;
+- use short axis labels, units, legends, and direct annotations where needed;
+- keep the background white and the plotting area clean;
+- use print-safe colors plus line styles, markers, hatching, or direct labels so the chart remains legible in black-and-white copies;
+- do not use dashboard cards, glowing palettes, 3D effects, pictograms, or decorative infographics.
+
 ## COSTAR Prompt Pattern
 
 Use this pattern for each image-model request:
@@ -173,9 +190,9 @@ Use this pattern for each image-model request:
 ```text
 Context: This figure is for a Chinese undergraduate thesis in [field]. It is based on the actual thesis evidence: [source code/data/formulas/questionnaire/case material/financial statements/screenshots]. It must look like a traditional textbook-style academic figure, not a modern poster or product diagram.
 
-Objective: Generate a high-resolution black-and-white [diagram type] for [chapter/section purpose].
+Objective: Generate a high-resolution [diagram/chart/table type] for [chapter/section purpose].
 
-Style: Conservative academic style, white background, thin black lines, simple geometric symbols, Songti-like Chinese labels, no color, no gradient, no shadow, no decorative icons, no caption inside the image.
+Style: Conservative academic style, white background, thin lines, simple geometric symbols or clean chart marks, Songti-like Chinese labels, no gradient, no shadow, no decorative icons, no caption inside the image. Use black-and-white for structural diagrams. For data charts, use a restrained print-safe academic palette only when color improves comparison; include labels, markers, line styles, hatching, or legends so the chart is still readable in grayscale.
 
 Task: Draw the following materials derived from the thesis analysis: [nodes, relationships, variables, indicators, data flows, factors, arrows, cardinalities, branch labels, or table dimensions].
 
@@ -196,7 +213,8 @@ Reject and regenerate if any item fails:
 - ER diagram lacks attributes or cardinalities.
 - DFD lacks external entity, process, data store, or data-flow direction.
 - Flowchart lacks start/end or decision branch labels.
-- Styling looks modern, colorful, promotional, or UI-dashboard-like.
+- Styling looks modern, decoratively colorful, promotional, or UI-dashboard-like.
+- Data visualization uses decorative color, color-only encoding, or an unverifiable chart value.
 - The figure is placed in a chapter where its diagram type does not belong.
 
 For a stricter handoff checklist, load [references/review-checklist.md](references/review-checklist.md).

@@ -45,8 +45,11 @@ Use this checklist before inserting generated figures into a thesis.
 
 ## Visual Style
 
-- Black-and-white or grayscale only.
-- No shadows, gradients, rounded modern cards, glowing lines, product icons, or colorful swimlanes.
+- Structural diagrams such as DFD, ER, module, architecture, flowchart, and sequence diagrams are black-and-white or grayscale by default.
+- Data visualizations may use restrained academic color when it improves comparison or readability.
+- Color charts must remain print-safe: use direct labels, line styles, markers, hatching, or a clear legend so the result still works in grayscale copies.
+- No shadows, gradients, rounded modern cards, glowing lines, product icons, decorative backgrounds, dashboard styling, or colorful swimlanes.
+- Reject rainbow palettes, neon colors, color-only encodings, and any chart whose values cannot be traced to thesis evidence.
 - Line weight is consistent.
 - White space is sufficient; nothing touches image borders.
 - It remains readable after insertion into an A4 page at normal thesis width.
