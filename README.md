@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/social-card.svg" alt="Academic Paper Figure Image2" width="920">
+  <img src="./assets/social-card.png" alt="Academic Paper Figure Image2" width="920">
 </p>
 
 # Academic Paper Figure Image2
