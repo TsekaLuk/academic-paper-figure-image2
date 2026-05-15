@@ -2,13 +2,28 @@
   <img src="./assets/social-card.png" alt="Academic Paper Figure Image2" width="920">
 </p>
 
+<p align="center">
+  <a href="./README.md"><img src="https://img.shields.io/badge/lang-English-black?style=flat-square" alt="English"></a>
+  <a href="./README.zh-CN.md"><img src="https://img.shields.io/badge/lang-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-lightgrey?style=flat-square" alt="简体中文"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/type-Agent%20Skill-black?style=flat-square" alt="Agent Skill">
+  <img src="https://img.shields.io/badge/scope-Chinese%20undergraduate%20thesis-555?style=flat-square" alt="Scope">
+  <img src="https://img.shields.io/badge/figures-research--first-555?style=flat-square" alt="Research-first">
+  <a href="https://github.com/TsekaLuk/academic-paper-figure-image2/stargazers"><img src="https://img.shields.io/github/stars/TsekaLuk/academic-paper-figure-image2?style=flat-square&label=star&color=black" alt="Stars"></a>
+</p>
+
 # Academic Paper Figure Image2
 
+> **Your system may be enough — the figures and their placement are what get you rejected.**
 > Research-first image-generation workflow for conservative undergraduate thesis figures.
 
 This skill turns messy, missing, or reviewer-unfriendly thesis figures into traditional, textbook-style academic visuals. It covers software diagrams, mathematical-modeling process figures, data-analysis charts, market-research survey visuals, management diagnosis diagrams, education-research evidence figures, and finance/accounting indicator charts.
 
 It is designed for the situation where a thesis is not failing because the work is absent, but because the expected field materials are missing, misplaced, visually crude, Mermaid/TikZ/dev-like, or inconsistent with conservative undergraduate thesis taste.
+
+> 中文读者请走传送门 → **[简体中文说明](./README.zh-CN.md)**
 
 ## What It Optimizes
 
@@ -91,3 +106,10 @@ cp -R academic-paper-figure-image2 ~/.agents/skills/
 A generated figure is acceptable only when it is accurate, conventional, readable at A4 thesis width, caption-free inside the image, and placed in the right chapter. For data visualizations, color is acceptable when it is restrained, print-safe, and backed by traceable thesis data.
 
 If the diagram looks impressive but a conservative undergraduate thesis reviewer would call it "乱", it fails.
+
+---
+
+<p align="center">
+  If this saved you a thesis-review round, a ⭐ helps other students find it.<br>
+  <sub><a href="./README.zh-CN.md">简体中文</a> · <a href="./docs/growth-playbook.md">Growth Playbook</a> · <a href="./SKILL.md">SKILL.md</a></sub>
+</p>
