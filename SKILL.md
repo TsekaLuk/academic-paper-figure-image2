@@ -152,6 +152,28 @@ When using Codex built-in image editing, edit the existing image2 asset itself w
 
 Codex desktop generated images are normally saved under `~/.codex/generated_images/<session-id>/<image-id>.png`. When moving an edited figure into a thesis repo, copy it to the target figure path instead of deleting or moving the cache file.
 
+## Reusable Toolchain
+
+Do not leave successful figure repair as prose-only experience. Convert it into a repeatable asset pipeline:
+
+1. Run a figure inventory before touching images:
+
+   ```bash
+   python scripts/audit_figure_assets.py thesis/figures/generated \
+     --recursive \
+     --out-md /tmp/figure-audit.md \
+     --contact-sheet /tmp/figure-contact-sheet.png
+   ```
+
+2. Back up the original assets into a timestamped folder next to the target figures.
+3. Classify each figure as image2 diagram, code-generated chart, screenshot, or table-like figure.
+4. For image2 diagrams, use Codex built-in image editing/generation and preserve structure; replace only after visual inspection.
+5. For data visualizations, fix the source script instead of bitmap-patching. Encode explicit font variables such as `FONT_CJK = "KaiTi_GB2312, KaiTi, STKaiti"` and `FONT_LATIN = "Times New Roman, Times, serif"`, then rerender through a deterministic path.
+6. For LaTeX/Pandoc/Word pipelines, enforce the same figure/table font policy at the template or OOXML postprocessor layer, because table cells and generated chart labels drift easily.
+7. Rebuild the thesis PDF and Word output, then render contact sheets of final pages containing figures. Check page fit, crop, caption ownership, and font consistency before declaring success.
+
+The included `scripts/audit_figure_assets.py` is the reusable first pass. It records dimensions, aspect ratios, rough source class, SVG font risks, and optional contact sheets. Extend it per school template instead of relying on memory.
+
 ## Diagram-Specific Rules
 
 ### Data Flow Diagram

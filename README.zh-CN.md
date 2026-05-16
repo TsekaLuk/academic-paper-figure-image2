@@ -68,6 +68,7 @@ PDF / Word 成稿页检查
 ## 仓库地图
 
 - [SKILL.md](./SKILL.md)：核心 agent 指令。
+- [scripts/audit_figure_assets.py](./scripts/audit_figure_assets.py)：可复用的图片资产清单、SVG 字体风险审计和 contact sheet 生成脚本。
 - [references/research-audit-workflow.md](./references/research-audit-workflow.md)：论文/代码/配图审计工作流。
 - [references/cross-domain-figure-playbook.md](./references/cross-domain-figure-playbook.md)：跨专业配图与材料 playbook。
 - [references/prompt-templates.md](./references/prompt-templates.md)：可复用的 image2 提示词模板。
@@ -81,6 +82,21 @@ PDF / Word 成稿页检查
 在暴露了内置图像生成工具的 Codex 会话里，直接使用该工具来产出一次性的仓库美术图与论文配图素材。不要错误地以为本地 `imagegen` CLI 是唯一路径。
 
 只有在确实需要可复现的批量生成、脚本化运行或本地 API 参数控制时，才使用本地 CLI。此时 CLI 可能需要 `OPENAI_API_KEY`。
+
+## 字体安全与工具链
+
+如果现有 image2 图的结构已经正确，只是字体不合规，应当用图像模型对原图做端到端字体编辑，不要为了换字体把它改成 Python/Pillow/Matplotlib 重画图。对江苏海洋大学风格的正文图表，默认要求是：图内中文五号 `KaiTi_GB2312`，英文、数字、模型名和公式五号 `Times New Roman` 或同等学术衬线字体；图题和编号交给论文模板，不写进图片。
+
+每次大规模替换前先跑资产审计：
+
+```bash
+python scripts/audit_figure_assets.py thesis/figures/generated \
+  --recursive \
+  --out-md /tmp/figure-audit.md \
+  --contact-sheet /tmp/figure-contact-sheet.png
+```
+
+这个脚本会生成图片清单、尺寸、长宽比风险、SVG 字体风险和接触表。稳妥流程是：先备份原图，再区分 image2 图、代码图表和截图；image2 图用 Codex 内置生图/编辑工具处理，数据可视化回到源脚本修字体并重新渲染，最后重新编译 PDF/Word 并检查最终页，而不是只看单张图片。
 
 ## 增长定位
 

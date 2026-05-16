@@ -68,6 +68,7 @@ PDF/Word page inspection
 ## Repository Map
 
 - [SKILL.md](./SKILL.md): core agent instructions.
+- [scripts/audit_figure_assets.py](./scripts/audit_figure_assets.py): reusable asset inventory, SVG font-risk audit, and contact-sheet generator.
 - [references/research-audit-workflow.md](./references/research-audit-workflow.md): thesis/code/figure audit workflow.
 - [references/cross-domain-figure-playbook.md](./references/cross-domain-figure-playbook.md): cross-field figure and material playbook.
 - [references/prompt-templates.md](./references/prompt-templates.md): reusable image2 prompt templates.
@@ -93,6 +94,19 @@ For Jiangsu Ocean University-style Chinese thesis deliverables, the default typo
 - Captions stay outside the image and are controlled by the thesis template.
 
 When editing image2 figures, state these constraints directly in the edit prompt: preserve all nodes, arrows, colors, layout, and figure content; change only typography; no caption, figure number, watermark, or decorative additions inside the image.
+
+## Reusable Toolchain
+
+Use the repo as a workflow, not just a prompt library:
+
+```bash
+python scripts/audit_figure_assets.py thesis/figures/generated \
+  --recursive \
+  --out-md /tmp/figure-audit.md \
+  --contact-sheet /tmp/figure-contact-sheet.png
+```
+
+The audit script produces a figure inventory, dimensions, aspect-ratio warnings, SVG font-risk warnings, and a contact sheet for visual regression. A reliable thesis pass should then back up source assets, classify image2 diagrams versus code charts versus screenshots, edit image2 figures with Codex built-in image tooling, rerender data visualizations from source scripts, rebuild PDF/Word, and inspect final pages rather than trusting isolated image files.
 
 ## Growth Positioning
 

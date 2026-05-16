@@ -62,6 +62,14 @@ Use this checklist before inserting generated figures into a thesis.
 - Font-only defects in an existing image2 figure are fixed by image-model editing of the original figure, not by replacing the figure with a code-rendered redraw.
 - Captions, figure numbers, and explanatory titles remain outside the image and are handled by the thesis template.
 
+## Toolchain Evidence
+
+- A figure inventory was generated before replacement.
+- Original image2 assets were backed up before overwrite.
+- Code-generated charts were fixed at the source-script level, not bitmap-patched.
+- SVG or chart sources do not silently fall back to SimSun, Songti, Microsoft YaHei, Arial, Helvetica, or generic sans-serif when the school requires KaiTi/Times.
+- A contact sheet or rendered PDF/Word page sample was checked after replacement.
+
 ## Placement
 
 - Figure is placed after first mention, not before the section explains it.
