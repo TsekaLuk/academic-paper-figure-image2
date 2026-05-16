@@ -139,6 +139,19 @@ When the thesis already uses an image2/Codex-generated figure with correct struc
 
 Do not replace image2 assets with Python, Pillow, Matplotlib, SVG, TikZ, Mermaid, or other code-rendered diagrams merely to satisfy font requirements. Code-generated charts remain appropriate for data-driven visualizations, but image2 diagram assets should stay image-model-authored unless the user explicitly asks for a code-rendered replacement.
 
+### Codex Built-In Image Editing
+
+In Codex desktop sessions, prefer the built-in Codex image-generation/editing tool for image2 work. Do not treat a missing local `OPENAI_API_KEY` as a blocker when Codex image capability is available; the local `imagegen` CLI is only an optional reproducible fallback for environments without built-in image editing.
+
+When using Codex built-in image editing, edit the existing image2 asset itself when the structure is already correct. Do not regenerate from a text prompt just to fix typography, because regenerated diagrams often drift in logic, arrows, labels, or node ordering. The workflow is:
+
+1. open or attach the original image2 figure;
+2. request a font-only edit with explicit invariants;
+3. inspect the edited output for structure drift before replacing the thesis asset;
+4. copy the generated image from Codex's generated-images cache into the thesis figure path, leaving the original cached output in place.
+
+Codex desktop generated images are normally saved under `~/.codex/generated_images/<session-id>/<image-id>.png`. When moving an edited figure into a thesis repo, copy it to the target figure path instead of deleting or moving the cache file.
+
 ## Diagram-Specific Rules
 
 ### Data Flow Diagram
