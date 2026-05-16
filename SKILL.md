@@ -125,12 +125,19 @@ Use these visual constraints unless the user gives a stricter school template:
   - Data visualizations may use a limited, print-safe academic palette when color clarifies series, groups, categories, or thresholds.
   - Prefer 2-5 muted, high-contrast colors; also use labels, line styles, markers, or hatching so the chart remains understandable when printed in grayscale.
   - Avoid rainbow palettes, neon colors, gradients, translucent dashboard fills, decorative backgrounds, and color-only encodings without labels or legend.
-- Songti/SimSun-like Chinese labels if possible; English labels in Times-like serif if needed.
+- Follow the target school's figure typography when it is known. For Jiangsu Ocean University-style Chinese thesis body figures and tables, use 五号 KaiTi_GB2312 for Chinese labels and 五号 Times New Roman, or another academic serif only when Times is unavailable, for English letters, model names, numbers, and formulas.
+- If no school-specific font rule is known, use Songti/SimSun-like Chinese labels if possible and English labels in Times-like serif if needed.
 - Thin, consistent strokes; right-angle or straight arrows; no hover boxes, floating decorations, or canvas artifacts.
 - Nodes arranged on a clear grid with generous spacing.
 - Labels short enough to fit: usually 2-8 Chinese characters per node.
 - Image should be high resolution and clean enough for A4 thesis insertion at single-column width.
 - Do not include "图 x.x" or explanatory caption text inside the image.
+
+## Font-Only Edit Rule
+
+When the thesis already uses an image2/Codex-generated figure with correct structure, and the defect is typography only, edit the original image with the image model instead of redrawing it with code. Preserve the image's node layout, arrows, grouping, colors, and academic visual language. The edit prompt should say "change only typography" and should explicitly name the required Chinese and English fonts.
+
+Do not replace image2 assets with Python, Pillow, Matplotlib, SVG, TikZ, Mermaid, or other code-rendered diagrams merely to satisfy font requirements. Code-generated charts remain appropriate for data-driven visualizations, but image2 diagram assets should stay image-model-authored unless the user explicitly asks for a code-rendered replacement.
 
 ## Diagram-Specific Rules
 
@@ -192,13 +199,19 @@ Context: This figure is for a Chinese undergraduate thesis in [field]. It is bas
 
 Objective: Generate a high-resolution [diagram/chart/table type] for [chapter/section purpose].
 
-Style: Conservative academic style, white background, thin lines, simple geometric symbols or clean chart marks, Songti-like Chinese labels, no gradient, no shadow, no decorative icons, no caption inside the image. Use black-and-white for structural diagrams. For data charts, use a restrained print-safe academic palette only when color improves comparison; include labels, markers, line styles, hatching, or legends so the chart is still readable in grayscale.
+Style: Conservative academic style, white background, thin lines, simple geometric symbols or clean chart marks, school-compliant typography, no gradient, no shadow, no decorative icons, no caption inside the image. Use black-and-white for structural diagrams unless the thesis already uses restrained academic accent fills. For data charts, use a restrained print-safe academic palette only when color improves comparison; include labels, markers, line styles, hatching, or legends so the chart is still readable in grayscale. If the school requires it, use 五号 KaiTi_GB2312 for Chinese labels and 五号 Times New Roman for English letters, numbers, and formulas.
 
 Task: Draw the following materials derived from the thesis analysis: [nodes, relationships, variables, indicators, data flows, factors, arrows, cardinalities, branch labels, or table dimensions].
 
 Audience: Conservative undergraduate thesis reviewers who expect standard field-appropriate academic figures.
 
 Response: Output only the diagram image. Ensure all Chinese text is readable, no node is cropped, arrows do not cross boxes, layout fits A4 thesis insertion.
+```
+
+For font-only image2 edits, use this stricter edit instruction:
+
+```text
+Edit this existing academic thesis figure. Preserve the exact content, nodes, arrows, layout, colors, line style, margins, and overall image2-authored structure. Change only typography: all Chinese labels must use 五号 KaiTi_GB2312; all English letters, model names, numbers, and formulas must use 五号 Times New Roman or an equivalent academic serif. Keep text readable at A4 thesis insertion width. Do not add a caption, figure number, watermark, title outside the diagram, new icons, or extra decoration.
 ```
 
 For ready-to-use prompts, load [references/prompt-templates.md](references/prompt-templates.md).
@@ -216,6 +229,8 @@ Reject and regenerate if any item fails:
 - Styling looks modern, decoratively colorful, promotional, or UI-dashboard-like.
 - Data visualization uses decorative color, color-only encoding, or an unverifiable chart value.
 - The figure is placed in a chapter where its diagram type does not belong.
+- A font-only request was handled by redrawing the figure with code instead of editing the original image2 figure.
+- Chinese labels violate the required school font, or English/numeric labels use a non-academic sans-serif when Times New Roman is required.
 
 For a stricter handoff checklist, load [references/review-checklist.md](references/review-checklist.md).
 

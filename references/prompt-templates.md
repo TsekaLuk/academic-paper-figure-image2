@@ -4,6 +4,26 @@ Use these templates with an image-generation model. Replace bracketed fields bef
 
 For non-software domains, use the generic cross-domain template in [cross-domain-figure-playbook.md](cross-domain-figure-playbook.md) first, then specialize it with the templates below.
 
+## Font-Only Image2 Edit
+
+Use this when a Codex/image2-generated figure is already structurally correct and only the typography needs to be brought into school format.
+
+```text
+Context: This is an existing image2-generated figure for a Chinese undergraduate thesis. The diagram structure is already approved and should not be redesigned.
+
+Objective: Edit the original figure to make its in-image typography compliant with the thesis format.
+
+Style: Preserve the existing conservative academic visual style, white background, restrained accent fills, thin lines, boxes, arrows, grouping, spacing, and margins. Change only typography.
+
+Typography: All Chinese labels must use 五号 KaiTi_GB2312. All English letters, model names, numbers, formulas, and punctuation where appropriate must use 五号 Times New Roman or an equivalent academic serif. Keep all text readable at A4 thesis insertion width.
+
+Task: Preserve every existing node, arrow, label meaning, ordering, color, and layout. Do not add or remove content. Do not redraw as a different diagram type.
+
+Avoid: no caption, no figure number, no watermark, no title outside the diagram, no icons, no gradient, no shadow, no new decorative elements, no Python/Matplotlib/SVG/TikZ/Mermaid-looking replacement.
+
+Response: Output only the edited figure image.
+```
+
 ## Context DFD
 
 ```text

@@ -54,6 +54,14 @@ Use this checklist before inserting generated figures into a thesis.
 - White space is sufficient; nothing touches image borders.
 - It remains readable after insertion into an A4 page at normal thesis width.
 
+## Typography
+
+- Known school typography rules are followed instead of generic "pretty" model defaults.
+- For Jiangsu Ocean University-style Chinese thesis body figures and tables, Chinese in-image labels use 五号 KaiTi_GB2312.
+- English letters, model names, numbers, and formulas use 五号 Times New Roman or an equivalent academic serif.
+- Font-only defects in an existing image2 figure are fixed by image-model editing of the original figure, not by replacing the figure with a code-rendered redraw.
+- Captions, figure numbers, and explanatory titles remain outside the image and are handled by the thesis template.
+
 ## Placement
 
 - Figure is placed after first mention, not before the section explains it.

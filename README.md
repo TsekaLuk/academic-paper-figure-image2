@@ -82,6 +82,18 @@ When working inside a Codex session that exposes a built-in image generation too
 
 Use the local CLI only when you specifically need reproducible batch generation, scripted runs, or local API-parameter control. In that case, the CLI may require `OPENAI_API_KEY`.
 
+## Font-Safe Figure Editing
+
+If an existing image2 figure already has the correct academic structure and only its typography is wrong, use the image model as an end-to-end **edit of the original figure**. Do not replace it with a Python/Pillow/Matplotlib redraw just to force fonts; that changes the authored image2 asset and can introduce new layout artifacts.
+
+For Jiangsu Ocean University-style Chinese thesis deliverables, the default typography requirement is:
+
+- Chinese text inside body tables, image2 diagrams, and Python advanced visualizations: 五号 `KaiTi_GB2312`.
+- English letters, model names, numbers, formulas, and punctuation where appropriate: 五号 `Times New Roman` or an equivalent academic serif.
+- Captions stay outside the image and are controlled by the thesis template.
+
+When editing image2 figures, state these constraints directly in the edit prompt: preserve all nodes, arrows, colors, layout, and figure content; change only typography; no caption, figure number, watermark, or decorative additions inside the image.
+
 ## Growth Positioning
 
 This repo packages a repeated thesis rescue pattern:
